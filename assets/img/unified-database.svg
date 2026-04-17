@@ -1,134 +1,148 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" font-family="Arial, Helvetica, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 750" font-family="Kanit, sans-serif">
   <defs>
     <linearGradient id="gOrange" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#f58220"/><stop offset="100%" stop-color="#d96a0a"/>
     </linearGradient>
-    <linearGradient id="gBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2980b9"/><stop offset="100%" stop-color="#1a5276"/>
+    <linearGradient id="gNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f"/><stop offset="100%" stop-color="#0a2a4a"/>
     </linearGradient>
-    <linearGradient id="gGreen" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#27ae60"/><stop offset="100%" stop-color="#1e8449"/>
+    <linearGradient id="gTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488"/><stop offset="100%" stop-color="#0a7c72"/>
     </linearGradient>
-    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.1"/></filter>
-    <filter id="shadowSm"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/></filter>
+    <linearGradient id="gPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#5b21b6"/>
+    </linearGradient>
+    <filter id="sh"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.1"/></filter>
+    <filter id="shSm"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/></filter>
   </defs>
 
-  <rect width="900" height="620" fill="#f8f9fa" rx="16"/>
+  <rect width="960" height="750" fill="#f8f9fa" rx="16"/>
 
-  <!-- Title -->
-  <text x="450" y="42" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a1a">SWIS Plus — Unified Database Architecture</text>
-  <text x="450" y="66" text-anchor="middle" font-size="13" fill="#6b6b6b">All modules, all departments — one database</text>
+  <!-- ════════ CENTRAL DATABASE ════════ -->
+  <ellipse cx="480" cy="370" rx="100" ry="58" fill="url(#gOrange)" filter="url(#sh)"/>
+  <ellipse cx="480" cy="356" rx="100" ry="58" fill="url(#gOrange)"/>
+  <ellipse cx="480" cy="356" rx="100" ry="30" fill="#f9a04d"/>
+  <text x="480" y="370" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">UNIFIED</text>
+  <text x="480" y="392" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">DATABASE</text>
 
-  <!-- Central Database -->
-  <ellipse cx="450" cy="330" rx="95" ry="55" fill="url(#gOrange)" filter="url(#shadow)"/>
-  <ellipse cx="450" cy="318" rx="95" ry="55" fill="url(#gOrange)"/>
-  <ellipse cx="450" cy="318" rx="95" ry="28" fill="#f9a04d"/>
-  <text x="450" y="330" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">UNIFIED</text>
-  <text x="450" y="350" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">DATABASE</text>
+  <!-- ════════ TOP ROW: โมดูลบริหาร (Navy) ════════ -->
+  <!-- Connection lines top -->
+  <line x1="480" y1="298" x2="100" y2="160" stroke="#f58220" stroke-width="1.8" opacity="0.3"/>
+  <line x1="480" y1="298" x2="270" y2="150" stroke="#f58220" stroke-width="1.8" opacity="0.3"/>
+  <line x1="480" y1="298" x2="480" y2="152" stroke="#f58220" stroke-width="1.8" opacity="0.3"/>
+  <line x1="480" y1="298" x2="690" y2="150" stroke="#f58220" stroke-width="1.8" opacity="0.3"/>
+  <line x1="480" y1="298" x2="860" y2="160" stroke="#f58220" stroke-width="1.8" opacity="0.3"/>
 
-  <!-- Connection lines -->
-  <line x1="450" y1="265" x2="130" y2="145" stroke="#f58220" stroke-width="2" opacity="0.35"/>
-  <line x1="450" y1="265" x2="290" y2="135" stroke="#f58220" stroke-width="2" opacity="0.35"/>
-  <line x1="450" y1="265" x2="450" y2="145" stroke="#f58220" stroke-width="2" opacity="0.35"/>
-  <line x1="450" y1="265" x2="610" y2="135" stroke="#f58220" stroke-width="2" opacity="0.35"/>
-  <line x1="450" y1="265" x2="770" y2="145" stroke="#f58220" stroke-width="2" opacity="0.35"/>
-  <line x1="450" y1="385" x2="90" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
-  <line x1="450" y1="385" x2="250" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
-  <line x1="450" y1="385" x2="410" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
-  <line x1="450" y1="385" x2="570" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
-  <line x1="450" y1="385" x2="730" y2="510" stroke="#f58220" stroke-width="2" opacity="0.35"/>
+  <!-- Label -->
+  <text x="480" y="82" text-anchor="middle" fill="#1e3a5f" font-size="13" font-weight="600">โมดูลบริหาร — ข้อมูลพื้นฐาน วิชาการ บุคลากร การเงิน ธุรการ</text>
 
-  <!-- Top row modules -->
-  <!-- 1. Base Data -->
-  <rect x="65" y="95" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
-  <circle cx="93" cy="123" r="14" fill="url(#gBlue)"/>
-  <text x="93" y="128" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">BD</text>
-  <text x="145" y="118" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Base Data</text>
-  <text x="145" y="134" text-anchor="middle" font-size="10" fill="#6b6b6b">Registration</text>
+  <!-- 1. Base Data (นักเรียน ครู โรงเรียน) -->
+  <rect x="30" y="100" width="140" height="65" rx="12" fill="#fff" stroke="#1e3a5f" stroke-width="1.5" filter="url(#shSm)"/>
+  <circle cx="58" cy="125" r="14" fill="url(#gNavy)"/>
+  <text x="58" y="130" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">01</text>
+  <text x="118" y="122" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">ข้อมูลพื้นฐาน</text>
+  <text x="118" y="140" text-anchor="middle" font-size="10" fill="#6b6b6b">นักเรียน · ครู · โรง</text>
 
   <!-- 2. Academic -->
-  <rect x="225" y="88" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
-  <circle cx="253" cy="116" r="14" fill="url(#gBlue)"/>
-  <text x="253" y="121" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">AC</text>
-  <text x="305" y="111" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Academic</text>
-  <text x="305" y="127" text-anchor="middle" font-size="10" fill="#6b6b6b">Curriculum</text>
+  <rect x="200" y="95" width="140" height="65" rx="12" fill="#fff" stroke="#1e3a5f" stroke-width="1.5" filter="url(#shSm)"/>
+  <circle cx="228" cy="120" r="14" fill="url(#gNavy)"/>
+  <text x="228" y="125" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">02</text>
+  <text x="288" y="117" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">วิชาการ</text>
+  <text x="288" y="135" text-anchor="middle" font-size="10" fill="#6b6b6b">หลักสูตร · วัดผล</text>
 
-  <!-- 3. HR -->
-  <rect x="385" y="88" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
-  <circle cx="413" cy="116" r="14" fill="url(#gBlue)"/>
-  <text x="413" y="121" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">HR</text>
-  <text x="465" y="111" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">HR</text>
-  <text x="465" y="127" text-anchor="middle" font-size="10" fill="#6b6b6b">Personnel</text>
+  <!-- 3. HR / Personnel -->
+  <rect x="410" y="90" width="140" height="65" rx="12" fill="#fff" stroke="#1e3a5f" stroke-width="1.5" filter="url(#shSm)"/>
+  <circle cx="438" cy="115" r="14" fill="url(#gNavy)"/>
+  <text x="438" y="120" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">HR</text>
+  <text x="498" y="112" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">บุคลากร</text>
+  <text x="498" y="130" text-anchor="middle" font-size="10" fill="#6b6b6b">Job Spec · สเปค</text>
 
   <!-- 4. Finance -->
-  <rect x="545" y="88" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
-  <circle cx="573" cy="116" r="14" fill="url(#gBlue)"/>
-  <text x="573" y="121" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">FN</text>
-  <text x="625" y="111" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Finance</text>
-  <text x="625" y="127" text-anchor="middle" font-size="10" fill="#6b6b6b">Budget</text>
+  <rect x="620" y="95" width="140" height="65" rx="12" fill="#fff" stroke="#1e3a5f" stroke-width="1.5" filter="url(#shSm)"/>
+  <circle cx="648" cy="120" r="14" fill="url(#gNavy)"/>
+  <text x="648" y="125" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">FN</text>
+  <text x="708" y="117" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">การเงิน</text>
+  <text x="708" y="135" text-anchor="middle" font-size="10" fill="#6b6b6b">งบประมาณ · เงินเดือน</text>
 
-  <!-- 5. Admin -->
-  <rect x="705" y="95" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
-  <circle cx="733" cy="123" r="14" fill="url(#gBlue)"/>
-  <text x="733" y="128" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">AD</text>
-  <text x="785" y="118" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Admin</text>
-  <text x="785" y="134" text-anchor="middle" font-size="10" fill="#6b6b6b">Services</text>
+  <!-- 5. Admin/Services -->
+  <rect x="790" y="100" width="140" height="65" rx="12" fill="#fff" stroke="#1e3a5f" stroke-width="1.5" filter="url(#shSm)"/>
+  <circle cx="818" cy="125" r="14" fill="url(#gNavy)"/>
+  <text x="818" y="130" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">AD</text>
+  <text x="878" y="122" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">ธุรการ</text>
+  <text x="878" y="140" text-anchor="middle" font-size="10" fill="#6b6b6b">สารบรรณ · บริการ</text>
 
-  <!-- Bottom row modules -->
+  <!-- ════════ LEFT: Executive (Dashboard + Portfolio) ════════ -->
+  <line x1="380" y1="356" x2="195" y2="356" stroke="#f58220" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.4"/>
+  <rect x="15" y="298" width="180" height="115" rx="16" fill="url(#gOrange)" filter="url(#sh)"/>
+  <text x="105" y="328" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">ผู้บริหาร</text>
+  <text x="105" y="348" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">Executive Dashboard</text>
+  <text x="105" y="366" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">KPI · สถิติ · รายงาน</text>
+  <rect x="42" y="380" width="126" height="22" rx="11" fill="rgba(255,255,255,0.2)"/>
+  <text x="105" y="395" text-anchor="middle" font-size="10" fill="#fff" font-weight="500">→ executive.html</text>
+
+  <!-- ════════ RIGHT: Teacher (Dashboard + Portfolio) ════════ -->
+  <line x1="580" y1="356" x2="765" y2="356" stroke="#f58220" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.4"/>
+  <rect x="765" y="298" width="180" height="115" rx="16" fill="url(#gTeal)" filter="url(#sh)"/>
+  <text x="855" y="328" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">ครู · บุคลากร</text>
+  <text x="855" y="348" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">Teacher Dashboard</text>
+  <text x="855" y="366" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">Portfolio · งานประจำวัน</text>
+  <rect x="792" y="380" width="126" height="22" rx="11" fill="rgba(255,255,255,0.2)"/>
+  <text x="855" y="395" text-anchor="middle" font-size="10" fill="#fff" font-weight="500">→ teacher.html</text>
+
+  <!-- ════════ BOTTOM-CENTER: Student (Dashboard + Portfolio) ════════ -->
+  <line x1="480" y1="414" x2="480" y2="470" stroke="#f58220" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.4"/>
+  <rect x="370" y="470" width="220" height="105" rx="16" fill="url(#gPurple)" filter="url(#sh)"/>
+  <text x="480" y="500" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">นักเรียน · ผู้ปกครอง</text>
+  <text x="480" y="520" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">Student Dashboard · Portfolio</text>
+  <text x="480" y="538" text-anchor="middle" font-size="11" fill="rgba(255,255,255,0.85)">คะแนน · ตารางเรียน · ข่าวสาร</text>
+  <rect x="417" y="548" width="126" height="22" rx="11" fill="rgba(255,255,255,0.2)"/>
+  <text x="480" y="563" text-anchor="middle" font-size="10" fill="#fff" font-weight="500">→ student.html</text>
+
+  <!-- ════════ BOTTOM ROW: โมดูลสนับสนุน (Green/Teal) ════════ -->
+  <!-- Connection lines bottom -->
+  <line x1="380" y1="400" x2="100" y2="618" stroke="#f58220" stroke-width="1.5" opacity="0.25"/>
+  <line x1="420" y1="414" x2="270" y2="618" stroke="#f58220" stroke-width="1.5" opacity="0.25"/>
+  <line x1="540" y1="414" x2="690" y2="618" stroke="#f58220" stroke-width="1.5" opacity="0.25"/>
+  <line x1="580" y1="400" x2="860" y2="618" stroke="#f58220" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- Label -->
+  <text x="480" y="640" text-anchor="middle" fill="#0d9488" font-size="13" font-weight="600">โมดูลสนับสนุน — พฤติกรรม กิจกรรม แผนงาน บัตรดิจิทัล มือถือ บริการนักเรียน</text>
+
   <!-- 6. Behavior -->
-  <rect x="25" y="488" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
-  <circle cx="53" cy="516" r="14" fill="url(#gGreen)"/>
-  <text x="53" y="521" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">BH</text>
-  <text x="105" y="511" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Behavior</text>
-  <text x="105" y="527" text-anchor="middle" font-size="10" fill="#6b6b6b">Tracking</text>
+  <rect x="20" y="655" width="145" height="60" rx="12" fill="#fff" stroke="#0d9488" stroke-width="1.5" filter="url(#shSm)"/>
+  <circle cx="48" cy="680" r="13" fill="url(#gTeal)"/>
+  <text x="48" y="685" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">05</text>
+  <text x="108" y="677" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">พฤติกรรม</text>
+  <text x="108" y="695" text-anchor="middle" font-size="10" fill="#6b6b6b">Tracking</text>
 
-  <!-- 7. Activities -->
-  <rect x="185" y="488" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
-  <circle cx="213" cy="516" r="14" fill="url(#gGreen)"/>
-  <text x="213" y="521" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">AT</text>
-  <text x="265" y="511" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Activities</text>
-  <text x="265" y="527" text-anchor="middle" font-size="10" fill="#6b6b6b">Events</text>
+  <!-- 7. PDCA/แผนงาน -->
+  <rect x="185" y="655" width="170" height="60" rx="12" fill="#fff" stroke="#0d9488" stroke-width="1.5" filter="url(#shSm)"/>
+  <circle cx="213" cy="680" r="13" fill="url(#gTeal)"/>
+  <text x="213" y="685" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">14</text>
+  <text x="290" y="677" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">แผนงาน PDCA</text>
+  <text x="290" y="695" text-anchor="middle" font-size="10" fill="#6b6b6b">9 ขั้นตอน · QA · SAR</text>
 
-  <!-- 8. Digital PDCA -->
-  <rect x="345" y="488" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
-  <circle cx="373" cy="516" r="14" fill="url(#gGreen)"/>
-  <path d="M367,516 A6,6 0 1,1 367,515.99" fill="none" stroke="#fff" stroke-width="2"/>
-  <path d="M373,510 L376,513 L373,516" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-  <text x="425" y="511" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">PDCA</text>
-  <text x="425" y="527" text-anchor="middle" font-size="10" fill="#6b6b6b">Plan-Do-Check-Act</text>
+  <!-- 8. Digital ID -->
+  <rect x="375" y="655" width="170" height="60" rx="12" fill="#fff" stroke="#0d9488" stroke-width="1.5" filter="url(#shSm)"/>
+  <circle cx="403" cy="680" r="13" fill="url(#gTeal)"/>
+  <text x="403" y="685" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">ID</text>
+  <text x="480" y="677" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">Digital ID</text>
+  <text x="480" y="695" text-anchor="middle" font-size="10" fill="#6b6b6b">RFID · Face Scan · Mart</text>
 
-  <!-- 9. Digital ID -->
-  <rect x="505" y="488" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
-  <circle cx="533" cy="516" r="14" fill="url(#gGreen)"/>
-  <text x="533" y="521" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">ID</text>
-  <text x="585" y="511" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Digital ID</text>
-  <text x="585" y="527" text-anchor="middle" font-size="10" fill="#6b6b6b">RFID · Face ID</text>
+  <!-- 9. Activities/Services -->
+  <rect x="565" y="655" width="175" height="60" rx="12" fill="#fff" stroke="#0d9488" stroke-width="1.5" filter="url(#shSm)"/>
+  <circle cx="593" cy="680" r="13" fill="url(#gTeal)"/>
+  <text x="593" y="685" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">SV</text>
+  <text x="670" y="677" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">บริการนักเรียน</text>
+  <text x="670" y="695" text-anchor="middle" font-size="10" fill="#6b6b6b">ห้องสมุด · พยาบาล · รับสมัคร</text>
 
-  <!-- 10. Mobile App -->
-  <rect x="665" y="488" width="130" height="56" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="1.5" filter="url(#shadowSm)"/>
-  <circle cx="693" cy="516" r="14" fill="url(#gGreen)"/>
-  <rect x="688" y="508" width="10" height="16" rx="2" fill="none" stroke="#fff" stroke-width="1.5"/>
-  <text x="745" y="511" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a1a">Mobile</text>
-  <text x="745" y="527" text-anchor="middle" font-size="10" fill="#6b6b6b">iOS · Android</text>
+  <!-- 10. Mobile -->
+  <rect x="760" y="655" width="175" height="60" rx="12" fill="#fff" stroke="#0d9488" stroke-width="1.5" filter="url(#shSm)"/>
+  <circle cx="788" cy="680" r="13" fill="url(#gTeal)"/>
+  <text x="788" y="685" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">28</text>
+  <text x="865" y="677" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">Mobile App</text>
+  <text x="865" y="695" text-anchor="middle" font-size="10" fill="#6b6b6b">iOS · Android</text>
 
-  <!-- Users at sides -->
-  <!-- Left: Executive -->
-  <rect x="15" y="280" width="120" height="90" rx="14" fill="url(#gOrange)" filter="url(#shadowSm)"/>
-  <circle cx="75" cy="310" r="12" fill="rgba(255,255,255,0.3)"/>
-  <rect x="67" y="300" width="16" height="12" rx="2" fill="rgba(255,255,255,0.6)"/>
-  <text x="75" y="340" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Executive</text>
-  <text x="75" y="356" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">Dashboard</text>
-  <line x1="135" y1="325" x2="355" y2="325" stroke="#f58220" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.5"/>
-
-  <!-- Right: Teacher -->
-  <rect x="765" y="280" width="120" height="90" rx="14" fill="url(#gOrange)" filter="url(#shadowSm)"/>
-  <circle cx="825" cy="310" r="12" fill="rgba(255,255,255,0.3)"/>
-  <rect x="817" y="300" width="16" height="12" rx="2" fill="rgba(255,255,255,0.6)"/>
-  <text x="825" y="340" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Teacher</text>
-  <text x="825" y="356" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">Record / Search</text>
-  <line x1="765" y1="325" x2="545" y2="325" stroke="#f58220" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.5"/>
-
-  <!-- Bottom labels -->
-  <text x="450" y="590" text-anchor="middle" font-size="13" fill="#6b6b6b">28 modules · 265 functions · One database · Cross-dimensional analysis</text>
-  <text x="450" y="610" text-anchor="middle" font-size="11" fill="#999">SWIS Plus — swisplus.com</text>
+  <!-- ════════ BOTTOM FOOTER ════════ -->
+  <text x="480" y="740" text-anchor="middle" font-size="12" fill="#999">28 โมดูล · 265 ฟังก์ชัน · ฐานข้อมูลเดียว · วิเคราะห์ได้ทุกมิติ</text>
 </svg>
