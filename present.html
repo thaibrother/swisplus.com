@@ -133,6 +133,28 @@
 .toc-num.n6 { background: linear-gradient(135deg, #059669, #047857); }
 .toc-num.n7 { background: linear-gradient(135deg, #d97706, #b45309); }
 .toc-num.n8 { background: linear-gradient(135deg, #f58220, #e06b10); }
+.toc-num.n9 { background: linear-gradient(135deg, #0ea5e9, #0284c7); }
+
+/* FAQ sub-links */
+.faq-links {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-top: 12px;
+}
+.faq-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-size: 13px; font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 1.5px solid;
+}
+.faq-link.parent { background: #f3e5f5; color: #7b1fa2; border-color: #ce93d8; }
+.faq-link.parent:hover { background: #e1bee7; }
+.faq-link.teacher { background: #e8f5e9; color: #2e7d32; border-color: #81c784; }
+.faq-link.teacher:hover { background: #c8e6c9; }
+.faq-link.admin { background: #fff3e0; color: #e65100; border-color: #ffb74d; }
+.faq-link.admin:hover { background: #ffe0b2; }
 
 .toc-body { flex: 1; }
 .toc-body h3 {
@@ -706,6 +728,21 @@
     </div>
     <span class="toc-go">→</span>
   </a>
+
+  <!-- 9. ศูนย์ช่วยเหลือ FAQ — ตัวอย่างหน้าค้นหาแยกตามกลุ่มผู้ใช้ -->
+  <div class="toc-item" style="cursor:default;">
+    <div class="toc-num n9">9</div>
+    <div class="toc-body">
+      <h3>ศูนย์ช่วยเหลือ — FAQ ตัวอย่าง</h3>
+      <p class="desc">ตัวอย่างหน้าค้นหาคำถามที่พบบ่อยในระบบ SWIS Plus — แยกตามกลุ่มผู้ใช้ พร้อม autocomplete แนะนำขณะพิมพ์</p>
+      <div class="faq-links">
+        <a href="faq-parent.html" class="faq-link parent">👪 ผู้ปกครอง</a>
+        <a href="faq-teacher.html" class="faq-link teacher">👩‍🏫 ครู</a>
+        <a href="faq-admin.html" class="faq-link admin">📊 ผู้บริหาร</a>
+      </div>
+      <span class="tag live">พร้อมนำเสนอ</span>
+    </div>
+  </div>
 
 </div>
 
