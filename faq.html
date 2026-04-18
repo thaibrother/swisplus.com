@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAQ — ศูนย์ช่วยเหลือ SWIS Plus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #F58220;
+  --dark: #1a1a2e;
+  --text: #222;
+  --muted: #888;
+  --bg: #f5f6fa;
+  --card: #fff;
+  --radius: 14px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Kanit', sans-serif; background: var(--bg); color: var(--text); }
+
+/* ===== TOP BAR (simulate SWIS nav) ===== */
+.swis-topbar {
+  background: var(--dark);
+  padding: 14px 24px;
+  display: flex; align-items: center; gap: 12px;
+  color: #fff;
+  position: sticky; top: 0; z-index: 100;
+}
+.swis-topbar .logo {
+  width: 32px; height: 32px;
+  background: var(--orange);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 14px; color: #fff;
+}
+.swis-topbar .brand { font-size: 18px; font-weight: 700; }
+.swis-topbar .badge {
+  margin-left: auto;
+  padding: 4px 14px;
+  border-radius: 99px;
+  background: rgba(255,255,255,0.1);
+  font-size: 12px; color: rgba(255,255,255,0.6);
+}
+
+/* ===== HERO ===== */
+.faq-hero {
+  text-align: center;
+  padding: 48px 24px 32px;
+  background: linear-gradient(180deg, #0e1e3a 0%, var(--bg) 100%);
+  color: #fff;
+}
+.faq-hero h1 {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.faq-hero p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+}
+
+/* ===== SEARCH ===== */
+.search-wrap {
+  max-width: 600px;
+  margin: -20px auto 0;
+  padding: 0 24px;
+  position: relative; z-index: 10;
+}
+.search-box {
+  width: 100%;
+  padding: 16px 20px 16px 48px;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  font-size: 16px;
+  font-family: 'Kanit', sans-serif;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%23999' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E") 16px center no-repeat;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-box:focus { border-color: var(--orange); }
+.search-box::placeholder { color: #bbb; }
+
+/* ===== ROLE SELECTOR ===== */
+.role-section {
+  max-width: 800px;
+  margin: 32px auto 0;
+  padding: 0 24px;
+}
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.role-btn {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 8px;
+  padding: 20px 12px;
+  border-radius: var(--radius);
+  border: 2px solid #e0e0e0;
+  background: var(--card);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.role-btn:hover { border-color: #ccc; transform: translateY(-2px); box-shadow: var(--shadow); }
+.role-btn.active { border-color: var(--orange); background: #fff8f0; }
+.role-btn .role-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+}
+.role-btn .role-icon.student { background: #e3f2fd; }
+.role-btn .role-icon.parent { background: #f3e5f5; }
+.role-btn .role-icon.teacher { background: #e8f5e9; }
+.role-btn .role-icon.admin { background: #fff3e0; }
+.role-btn .role-name { font-size: 14px; font-weight: 600; color: var(--text); }
+.role-btn .role-count { font-size: 12px; color: var(--muted); }
+
+/* ===== POPULAR ===== */
+.popular-section {
+  max-width: 800px;
+  margin: 36px auto 0;
+  padding: 0 24px;
+}
+.section-label {
+  font-size: 13px; font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+/* ===== FAQ LIST ===== */
+.faq-section {
+  max-width: 800px;
+  margin: 24px auto 0;
+  padding: 0 24px 80px;
+}
+
+.faq-category {
+  margin-bottom: 24px;
+}
+.cat-title {
+  font-size: 16px; font-weight: 700;
+  color: var(--text);
+  padding: 12px 0;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 8px;
+}
+
+.faq-item {
+  border-radius: 12px;
+  margin-bottom: 6px;
+  background: var(--card);
+  border: 1px solid #eee;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.faq-item:hover { border-color: #ddd; }
+.faq-item.open { border-color: var(--orange); }
+
+.faq-q {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 15px; font-weight: 500;
+  color: var(--text);
+  line-height: 1.6;
+}
+.faq-q .q-icon {
+  min-width: 28px; height: 28px;
+  border-radius: 8px;
+  background: #f0f4f8;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; color: var(--orange);
+}
+.faq-item.open .faq-q .q-icon { background: var(--orange); color: #fff; }
+.faq-q .q-text { flex: 1; }
+.faq-q .q-arrow {
+  font-size: 14px; color: #ccc;
+  transition: transform 0.3s;
+}
+.faq-item.open .faq-q .q-arrow { transform: rotate(180deg); color: var(--orange); }
+
+.faq-a {
+  display: none;
+  padding: 0 20px 20px 60px;
+  font-size: 14px; color: #555;
+  line-height: 1.9;
+}
+.faq-item.open .faq-a { display: block; }
+.faq-a strong { color: var(--text); }
+
+/* Tags */
+.role-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 4px;
+}
+.role-tag.t-student { background: #e3f2fd; color: #1565c0; }
+.role-tag.t-parent { background: #f3e5f5; color: #6a1b9a; }
+.role-tag.t-teacher { background: #e8f5e9; color: #2e7d32; }
+.role-tag.t-admin { background: #fff3e0; color: #e65100; }
+
+/* No results */
+.no-results {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--muted);
+  font-size: 15px;
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .role-grid { grid-template-columns: repeat(2, 1fr); }
+  .faq-a { padding-left: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- SWIS TOP BAR -->
+<div class="swis-topbar">
+  <div class="logo">S+</div>
+  <span class="brand">SWIS Plus</span>
+  <span class="badge">Prototype — FAQ ศูนย์ช่วยเหลือ</span>
+</div>
+
+<!-- HERO -->
+<div class="faq-hero">
+  <h1>ศูนย์ช่วยเหลือ</h1>
+  <p>มีอะไรให้ช่วยไหม? ค้นหาหรือเลือกกลุ่มผู้ใช้ด้านล่าง</p>
+</div>
+
+<!-- SEARCH -->
+<div class="search-wrap">
+  <input type="text" class="search-box" id="searchBox" placeholder="พิมพ์คำถาม เช่น ลืมรหัสผ่าน, ดูเกรด, แผนงาน PDCA...">
+</div>
+
+<!-- ROLE SELECTOR -->
+<div class="role-section">
+  <div class="role-grid">
+    <div class="role-btn active" data-role="all" onclick="filterRole('all', this)">
+      <div class="role-icon" style="background:#f0f4f8;">📋</div>
+      <div class="role-name">ทั้งหมด</div>
+      <div class="role-count" id="countAll"></div>
+    </div>
+    <div class="role-btn" data-role="student" onclick="filterRole('student', this)">
+      <div class="role-icon student">🎓</div>
+      <div class="role-name">นักเรียน</div>
+      <div class="role-count" id="countStudent"></div>
+    </div>
+    <div class="role-btn" data-role="parent" onclick="filterRole('parent', this)">
+      <div class="role-icon parent">👪</div>
+      <div class="role-name">ผู้ปกครอง</div>
+      <div class="role-count" id="countParent"></div>
+    </div>
+    <div class="role-btn" data-role="teacher" onclick="filterRole('teacher', this)">
+      <div class="role-icon teacher">👩‍🏫</div>
+      <div class="role-name">ครู</div>
+      <div class="role-count" id="countTeacher"></div>
+    </div>
+  </div>
+  <div class="role-grid" style="margin-top:12px; grid-template-columns: 1fr;">
+    <div class="role-btn" data-role="admin" onclick="filterRole('admin', this)">
+      <div class="role-icon admin">📊</div>
+      <div class="role-name">ผู้บริหาร</div>
+      <div class="role-count" id="countAdmin"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ CONTENT -->
+<div class="faq-section" id="faqContainer">
+
+  <!-- ===== คำถามยอดนิยม (ทุกกลุ่ม) ===== -->
+  <div class="faq-category" data-cat="popular">
+    <div class="cat-title">🔥 คำถามยอดนิยม</div>
+
+    <div class="faq-item" data-roles="student,parent,teacher,admin">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ลืมรหัสผ่าน ทำอย่างไร?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        กดปุ่ม <strong>"ลืมรหัสผ่าน"</strong> ที่หน้าล็อกอิน ระบบจะส่งลิงก์ตั้งรหัสใหม่ไปที่อีเมลที่ลงทะเบียนไว้ หากไม่ได้รับอีเมลภายใน 5 นาที ให้ตรวจสอบโฟลเดอร์ Spam หรือติดต่อเจ้าหน้าที่ IT ของโรงเรียน
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="student,parent,teacher,admin">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">เปลี่ยนภาษาของระบบได้ไหม?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ได้ — กดที่ไอคอนภาษาด้านขวาบนของหน้าจอ ระบบรองรับภาษาไทยและภาษาอังกฤษ การตั้งค่าจะจำไว้สำหรับครั้งถัดไปที่ล็อกอิน
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="student,parent,teacher,admin">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ใช้งานบนมือถือได้ไหม?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ได้ — SWIS Plus รองรับการใช้งานผ่านเว็บเบราว์เซอร์บนมือถือทุกรุ่น (Responsive Web) ไม่จำเป็นต้องติดตั้งแอปเพิ่มเติม
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== นักเรียน ===== -->
+  <div class="faq-category" data-cat="student">
+    <div class="cat-title">🎓 นักเรียน — การเรียนและข้อมูลส่วนตัว</div>
+
+    <div class="faq-item" data-roles="student">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ดูผลการเรียน (เกรด) ได้ที่ไหน?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ล็อกอินเข้าระบบแล้วไปที่เมนู <strong>"ผลการเรียน"</strong> จะเห็นเกรดแยกตามรายวิชาและภาคเรียน สามารถดูย้อนหลังได้ทุกปีการศึกษา
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="student">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ดูตารางเรียนได้ที่ไหน?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ไปที่เมนู <strong>"ตารางเรียน"</strong> ระบบจะแสดงตารางเรียนประจำสัปดาห์ของห้องเรียนที่สังกัด พร้อมชื่อครูผู้สอนและห้องเรียน
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="student">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ดูสถิติการมาเรียนได้อย่างไร?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ไปที่เมนู <strong>"การมาเรียน"</strong> จะเห็นสรุปจำนวนวันมาเรียน ขาด ลา มาสาย แยกตามเดือนและภาคเรียน
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="student">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ต้องการแก้ไขข้อมูลส่วนตัว ทำอย่างไร?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ข้อมูลบางรายการสามารถแก้ไขได้เอง (เช่น รูปโปรไฟล์ เบอร์โทร) ผ่านเมนู <strong>"ข้อมูลส่วนตัว"</strong> แต่ข้อมูลทางการ (ชื่อ-นามสกุล ห้องเรียน) ต้องแจ้งงานทะเบียนของโรงเรียนเป็นผู้แก้ไข
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ผู้ปกครอง ===== -->
+  <div class="faq-category" data-cat="parent">
+    <div class="cat-title">👪 ผู้ปกครอง — ติดตามบุตรหลาน</div>
+
+    <div class="faq-item" data-roles="parent">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ดูผลการเรียนของลูกได้อย่างไร?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ล็อกอินด้วยบัญชีผู้ปกครอง ระบบจะแสดงรายชื่อบุตรหลานที่ลงทะเบียนไว้ กดเลือกชื่อแล้วจะเห็น <strong>ผลการเรียน การมาเรียน พฤติกรรม</strong> ทั้งหมด หากมีบุตรหลานหลายคนในเครือ สามารถสลับดูได้
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="parent">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ลูกขาดเรียน ระบบจะแจ้งเตือนไหม?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ระบบสามารถส่งการแจ้งเตือนผ่าน SMS หรือ Line ได้ ขึ้นอยู่กับการตั้งค่าของแต่ละโรงเรียน หากต้องการเปิดใช้งาน ให้ติดต่อฝ่ายทะเบียนหรือฝ่าย IT ของโรงเรียน
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="parent">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ดูค่าธรรมเนียมและใบเสร็จได้ที่ไหน?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ไปที่เมนู <strong>"การเงิน"</strong> จะเห็นรายการค่าธรรมเนียม สถานะการชำระ และสามารถดาวน์โหลดใบเสร็จรับเงินในรูปแบบ PDF ได้
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="parent">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ต้องการติดต่อครูประจำชั้น ทำอย่างไร?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ในหน้าข้อมูลบุตรหลาน จะแสดงชื่อครูประจำชั้นพร้อมช่องทางติดต่อ สามารถส่งข้อความผ่านระบบได้โดยตรง
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ครู ===== -->
+  <div class="faq-category" data-cat="teacher">
+    <div class="cat-title">👩‍🏫 ครู — การจัดการงานและแผนงาน</div>
+
+    <div class="faq-item" data-roles="teacher">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">กรอกแผนงาน PDCA อย่างไร?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ไปที่เมนู <strong>"แผนงาน"</strong> → เลือกหน่วยงาน → กดสร้างแผนงานใหม่ ระบบจะแสดงแบบฟอร์มตามกระบวนการ PDCA 9 ขั้นตอน โดยข้อมูล Chain of Alignment (แผนยุทธศาสตร์ → แผนพัฒนาโรงเรียน) จะถูกดึงมาให้อัตโนมัติ
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="teacher">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">คู่มือพัฒนาตนเอง ดูได้ที่ไหน?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ไปที่เมนู <strong>"พัฒนาตนเอง"</strong> ระบบจะแสดงคู่มือพัฒนาตนเองที่ถอดข้อมูลจากคู่มือคุณภาพหน่วยงานที่สังกัด — ประกอบด้วย KRA, Job Spec (C/K/Cp) ของตำแหน่ง และแผนพัฒนาตนเองรายปี
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="teacher">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">บันทึกผลการสอนและให้เกรดอย่างไร?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ไปที่เมนู <strong>"วิชาการ"</strong> → เลือกรายวิชา → <strong>"บันทึกคะแนน"</strong> สามารถกรอกคะแนนเป็นรายหน่วยหรือรายภาคเรียน ระบบจะคำนวณเกรดตามเกณฑ์ที่โรงเรียนตั้งไว้
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="teacher">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">เช็คชื่อนักเรียนในระบบทำอย่างไร?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ไปที่เมนู <strong>"การมาเรียน"</strong> → เลือกห้อง → กด <strong>"เช็คชื่อ"</strong> ระบบจะแสดงรายชื่อนักเรียนพร้อมปุ่มระบุสถานะ (มา / ขาด / ลา / สาย) ข้อมูลจะอัปเดตทันทีและผู้ปกครองสามารถเห็นได้
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="teacher">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ดู Job Spec ของตำแหน่งตัวเองได้ที่ไหน?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ไปที่เมนู <strong>"ข้อมูลส่วนตัว"</strong> → แท็บ <strong>"คุณสมบัติตามตำแหน่ง"</strong> จะเห็น Job Spec แบ่งเป็น C (คุณลักษณะ), K (ความรู้), Cp (ทักษะ) ตามที่กำหนดไว้ในคู่มือคุณภาพหน่วยงาน
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ผู้บริหาร ===== -->
+  <div class="faq-category" data-cat="admin">
+    <div class="cat-title">📊 ผู้บริหาร — ภาพรวมและการติดตาม</div>
+
+    <div class="faq-item" data-roles="admin">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">Dashboard ผู้บริหาร ดูข้อมูลอะไรได้บ้าง?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        Dashboard แสดงภาพรวมทั้งโรงเรียน — จำนวนนักเรียน สถิติการมาเรียน ความก้าวหน้าแผนงาน สถานะงบประมาณ ผลประเมินคุณภาพ และข้อมูล Workload ของบุคลากร สามารถเจาะลึกแต่ละส่วนได้
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="admin">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ติดตามความก้าวหน้าแผนงานได้อย่างไร?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ไปที่เมนู <strong>"แผนงาน"</strong> → <strong>"ภาพรวม"</strong> จะเห็นสถานะแผนงานของทุกหน่วยงาน แบ่งตาม PDCA 9 ขั้นตอน — เห็นได้ทันทีว่าหน่วยงานไหนอยู่ขั้นไหน มีอะไรค้าง งบประมาณใช้ไปเท่าไหร่
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="admin">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ดูรายงานงบประมาณรวมได้ที่ไหน?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ไปที่เมนู <strong>"งบประมาณ"</strong> → <strong>"สรุปภาพรวม"</strong> จะเห็นงบประมาณแยกตามหน่วยงาน เปรียบเทียบงบตั้ง vs งบใช้จริง พร้อมกราฟแสดงแนวโน้มรายเดือน
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="admin">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ดูข้อมูล Workload ของบุคลากรได้อย่างไร?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ไปที่เมนู <strong>"บุคลากร"</strong> → <strong>"Workload"</strong> ระบบจะแสดง workload ของแต่ละคน เทียบกับ Job Spec ที่กำหนด — เห็นได้ว่าใครมีภาระงานมากหรือน้อยกว่าที่ควร และคุณสมบัติตรงกับงานหรือไม่
+      </div>
+    </div>
+
+    <div class="faq-item" data-roles="admin">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <div class="q-icon">Q</div>
+        <div class="q-text">ดูคู่มือคุณภาพของแต่ละหน่วยงานได้ที่ไหน?</div>
+        <span class="q-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        ไปที่เมนู <strong>"คุณภาพ"</strong> → เลือกหน่วยงาน ระบบจะแสดงคู่มือคุณภาพหน่วยงานฉบับปัจจุบัน — KRA, เป้าหมายคุณภาพ, KPI, Job Spec, บัญชีทรัพย์สิน และผลการดำเนินงานปีที่ผ่านมา
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- NO RESULTS -->
+<div class="no-results" id="noResults">
+  ไม่พบคำถามที่ตรงกัน — ลองใช้คำค้นอื่น หรือติดต่อเจ้าหน้าที่ IT ของโรงเรียน
+</div>
+
+<script>
+// Toggle FAQ
+function toggleFaq(el) {
+  el.closest('.faq-item').classList.toggle('open');
+}
+
+// Filter by role
+let currentRole = 'all';
+function filterRole(role, btn) {
+  currentRole = role;
+  document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+}
+
+// Search
+const searchBox = document.getElementById('searchBox');
+searchBox.addEventListener('input', () => applyFilters());
+
+function applyFilters() {
+  const query = searchBox.value.trim().toLowerCase();
+  const items = document.querySelectorAll('.faq-item');
+  const categories = document.querySelectorAll('.faq-category');
+  let visibleCount = 0;
+
+  items.forEach(item => {
+    const roles = item.dataset.roles.split(',');
+    const text = item.textContent.toLowerCase();
+    const roleMatch = currentRole === 'all' || roles.includes(currentRole);
+    const searchMatch = !query || text.includes(query);
+    const show = roleMatch && searchMatch;
+    item.style.display = show ? '' : 'none';
+    if (show) visibleCount++;
+  });
+
+  // Hide empty categories
+  categories.forEach(cat => {
+    const visItems = cat.querySelectorAll('.faq-item:not([style*="display: none"])');
+    cat.style.display = visItems.length > 0 ? '' : 'none';
+  });
+
+  document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+  updateCounts();
+}
+
+function updateCounts() {
+  const items = document.querySelectorAll('.faq-item');
+  const counts = { all: 0, student: 0, parent: 0, teacher: 0, admin: 0 };
+  items.forEach(item => {
+    const roles = item.dataset.roles.split(',');
+    counts.all++;
+    roles.forEach(r => { if (counts[r] !== undefined) counts[r]++; });
+  });
+  document.getElementById('countAll').textContent = counts.all + ' คำถาม';
+  document.getElementById('countStudent').textContent = counts.student + ' คำถาม';
+  document.getElementById('countParent').textContent = counts.parent + ' คำถาม';
+  document.getElementById('countTeacher').textContent = counts.teacher + ' คำถาม';
+  document.getElementById('countAdmin').textContent = counts.admin + ' คำถาม';
+}
+
+// Init
+updateCounts();
+</script>
+</body>
+</html>
