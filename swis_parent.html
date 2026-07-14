@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>นโยบายความเป็นส่วนตัว | Privacy Policy — SWIS Parent</title>
+<style>
+  :root {
+    --primary: #1565C0;
+    --primary-dark: #0D47A1;
+    --text: #263238;
+    --text-muted: #607D8B;
+    --bg: #F5F7FA;
+    --card: #FFFFFF;
+    --note-bg: #FFF8E1;
+    --note-border: #FFB300;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", "Sarabun", "Noto Sans Thai", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    padding: 28px 16px;
+  }
+  .header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  header h1 { font-size: 1.35rem; font-weight: 700; }
+  header .app-name { font-size: 0.95rem; opacity: 0.9; margin-top: 2px; }
+  .lang-toggle {
+    display: flex;
+    background: rgba(255,255,255,0.18);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .lang-toggle button {
+    border: 0;
+    background: transparent;
+    color: #fff;
+    padding: 10px 18px;
+    min-height: 44px;
+    min-width: 60px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .lang-toggle button.active {
+    background: #fff;
+    color: var(--primary-dark);
+    font-weight: 700;
+  }
+  main {
+    max-width: 800px;
+    margin: 24px auto 48px;
+    padding: 0 16px;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(21, 101, 192, 0.08);
+    padding: 28px 24px;
+  }
+  .updated { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+  h2 {
+    color: var(--primary-dark);
+    font-size: 1.15rem;
+    margin: 28px 0 10px;
+    padding-top: 8px;
+  }
+  h2:first-of-type { margin-top: 0; }
+  h3 { font-size: 1rem; margin: 18px 0 8px; color: var(--text); }
+  p { margin-bottom: 10px; }
+  ul { margin: 8px 0 12px 24px; }
+  li { margin-bottom: 8px; }
+  .note {
+    background: var(--note-bg);
+    border-left: 4px solid var(--note-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-weight: 600;
+  }
+  .contact-box {
+    background: #E3F2FD;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-top: 12px;
+  }
+  .contact-box p { margin-bottom: 6px; }
+  a { color: var(--primary); word-break: break-all; }
+  footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding: 0 16px 32px;
+  }
+  [data-lang] { display: none; }
+  html[data-active="th"] [data-lang="th"],
+  html[data-active="en"] [data-lang="en"] { display: block; }
+  html[data-active="th"] span[data-lang="th"],
+  html[data-active="en"] span[data-lang="en"] { display: inline; }
+  html[data-active="th"] li[data-lang="th"],
+  html[data-active="en"] li[data-lang="en"] { display: list-item; }
+  @media (max-width: 480px) {
+    .card { padding: 20px 16px; }
+    header h1 { font-size: 1.15rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <h1>
+        <span data-lang="th">นโยบายความเป็นส่วนตัว</span>
+        <span data-lang="en">Privacy Policy</span>
+      </h1>
+      <div class="app-name">SWIS Parent — SWIS Plus CO., LTD.</div>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" id="btn-th" onclick="setLang('th')">ไทย</button>
+      <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <p class="updated">
+      <span data-lang="th">ปรับปรุงล่าสุด: 14 กรกฎาคม 2569</span>
+      <span data-lang="en">Last updated: July 14, 2026</span>
+    </p>
+
+    <!-- About Us -->
+    <h2>
+      <span data-lang="th">เกี่ยวกับเรา</span>
+      <span data-lang="en">About Us</span>
+    </h2>
+    <p data-lang="th">บริษัท สวิซพลัส จำกัด (SWIS Plus CO., LTD.) ("เรา") ผู้พัฒนาแอปพลิเคชัน SWIS Parent ให้ความสำคัญกับการคุ้มครองข้อมูลส่วนบุคคลของคุณในฐานะผู้ปกครอง นโยบายนี้อธิบายว่าเราเก็บรวบรวม ใช้ และเปิดเผยข้อมูลของคุณอย่างไร</p>
+    <p data-lang="en">SWIS Plus CO., LTD. ("We," "Us," or "Our"), the developer of the SWIS Parent application ("The App"), is committed to protecting the privacy of our users. This policy explains how we collect, use, and disclose your personal information as a parent using this application.</p>
+
+    <!-- 1 -->
+    <h2>
+      <span data-lang="th">1. การเก็บรวบรวมข้อมูลส่วนบุคคล</span>
+      <span data-lang="en">1. Information We Collect</span>
+    </h2>
+    <p data-lang="th">เราเก็บรวบรวมข้อมูลเพื่อวัตถุประสงค์ในการให้บริการแอปพลิเคชันเท่านั้น โดยไม่มีการสมัครและสร้างรหัสผ่านในแอปโดยตรง</p>
+    <p data-lang="en">We collect information necessary to provide the App's functions. The App does not allow users to sign up or create passwords directly.</p>
+
+    <h3>
+      <span data-lang="th">1.1 ข้อมูลการลงชื่อเข้าใช้</span>
+      <span data-lang="en">1.1 Login Information</span>
+    </h3>
+    <p data-lang="th">เนื่องจากคุณใช้ระบบยืนยันตัวตนจากภายนอก เราจะได้รับข้อมูลพื้นฐานจาก:</p>
+    <p data-lang="en">Since you use third-party sign-in services, we receive basic information from:</p>
+    <ul>
+      <li data-lang="th"><strong>Google Sign-In:</strong> ชื่อ, ที่อยู่อีเมล (ตามที่คุณอนุญาต)</li>
+      <li data-lang="en"><strong>Google Sign-In:</strong> Your name and email address (as permitted by you)</li>
+      <li data-lang="th"><strong>Sign in with Apple:</strong> ชื่อ, ที่อยู่อีเมล (คุณสามารถเลือกใช้อีเมลจริงหรืออีเมลซ่อน), และตัวระบุผู้ใช้ (User ID)</li>
+      <li data-lang="en"><strong>Sign in with Apple:</strong> Your name, email address (which can be your real email or a relay/private email), and a unique User Identifier</li>
+    </ul>
+    <div class="note">
+      <span data-lang="th">เราไม่มีการจัดเก็บรหัสผ่านของคุณ</span>
+      <span data-lang="en">We do not store or have access to your passwords.</span>
+    </div>
+
+    <h3>
+      <span data-lang="th">1.2 ข้อมูลที่เกี่ยวข้องกับนักเรียน</span>
+      <span data-lang="en">1.2 Student-Related Data</span>
+    </h3>
+    <p data-lang="th">ข้อมูลที่ถูกดึงมาจากระบบของโรงเรียนเพื่อแสดงในแอป ได้แก่:</p>
+    <p data-lang="en">Data is pulled from the school's management system and displayed within the App, including:</p>
+    <ul>
+      <li data-lang="th">ข้อมูลระบุความผูกพันกับนักเรียน (เช่น รหัสประจำตัวนักเรียน)</li>
+      <li data-lang="en"><strong>Parent-Student Relationship Data:</strong> Information linking your account to your child(ren) (e.g., Student ID)</li>
+      <li data-lang="th">ข้อมูลการศึกษาของนักเรียน: ผลการเรียน, การบ้าน, งานมอบหมาย, ข่าวสาร/ประกาศจากโรงเรียน, และข้อมูลการชำระเงินออนไลน์</li>
+      <li data-lang="en"><strong>Student Academic Data:</strong> Grades, homework assignments, coursework, school news/announcements, and online payment information</li>
+      <li data-lang="th">ข้อมูลการใช้งานแอป: เช่น หน้าจอที่เข้าชม และเวลาการใช้งาน</li>
+      <li data-lang="en"><strong>Usage Data:</strong> Information about how you use the App (e.g., screens viewed, login times)</li>
+    </ul>
+
+    <!-- 2 -->
+    <h2>
+      <span data-lang="th">2. วัตถุประสงค์ในการใช้ข้อมูล</span>
+      <span data-lang="en">2. How We Use Your Information</span>
+    </h2>
+    <p data-lang="th">เราใช้ข้อมูลส่วนบุคคลของคุณเพื่อวัตถุประสงค์หลักดังนี้:</p>
+    <p data-lang="en">We use your personal data strictly for the following primary purposes:</p>
+    <ul>
+      <li data-lang="th"><strong>ให้บริการหลักของแอป:</strong> อนุญาตให้คุณเข้าสู่ระบบ และแสดงข้อมูลทั้งหมดเกี่ยวกับนักเรียนให้ผู้ปกครองดูได้อย่างถูกต้อง</li>
+      <li data-lang="en"><strong>Service Delivery:</strong> To allow you to log in securely and to accurately display all relevant student data related to your child(ren)</li>
+      <li data-lang="th"><strong>การยืนยันตัวตน:</strong> เพื่อตรวจสอบและยืนยันสิทธิ์ในการเข้าถึงข้อมูลเฉพาะของบุตรหลานที่อยู่ในการดูแลของคุณ</li>
+      <li data-lang="en"><strong>Authentication:</strong> To verify your identity and your authorization to access sensitive student information</li>
+      <li data-lang="th"><strong>การปรับปรุงและบำรุงรักษา:</strong> เพื่อวิเคราะห์ประสิทธิภาพของแอป และแก้ไขข้อบกพร่อง</li>
+      <li data-lang="en"><strong>Improvement:</strong> To analyze App usage, fix bugs, and improve the overall user experience</li>
+    </ul>
+
+    <!-- 3 -->
+    <h2>
+      <span data-lang="th">3. การเปิดเผยข้อมูล</span>
+      <span data-lang="en">3. Disclosure of Your Information</span>
+    </h2>
+    <div class="note">
+      <span data-lang="th">เราจะไม่ขายข้อมูลส่วนบุคคลของคุณ เราจะเปิดเผยข้อมูลเฉพาะกับบุคคลที่สามที่จำเป็นเท่านั้น:</span>
+      <span data-lang="en">We do not sell your personal data. We only disclose information to third parties when necessary:</span>
+    </div>
+    <ul>
+      <li data-lang="th"><strong>โรงเรียน:</strong> ข้อมูลทั้งหมดมาจากระบบบริหารจัดการของโรงเรียน (School Management System) ซึ่งถือเป็นผู้ควบคุมข้อมูลหลัก</li>
+      <li data-lang="en"><strong>The School:</strong> All data displayed originates from the School Management System. The school is the primary data controller for student records</li>
+      <li data-lang="th"><strong>ผู้ให้บริการภายนอก:</strong> เช่น ผู้ให้บริการ Cloud Hosting และบริการวิเคราะห์การใช้งาน (Analytics) เพื่อช่วยในการดำเนินงานของเรา</li>
+      <li data-lang="en"><strong>External Service Providers:</strong> We use trusted providers for essential functions like cloud hosting and analytics to operate the App. These providers are bound by strict confidentiality agreements</li>
+      <li data-lang="th"><strong>Google และ Apple:</strong> การใช้บริการลงชื่อเข้าใช้เป็นไปตามนโยบายความเป็นส่วนตัวของแพลตฟอร์มเหล่านั้น</li>
+      <li data-lang="en"><strong>Google and Apple:</strong> Your use of their sign-in service is governed by their respective privacy policies</li>
+      <li data-lang="th"><strong>ตามกฎหมาย:</strong> หากจำเป็นต้องเปิดเผยตามคำสั่งศาล หรือตามที่กฎหมายกำหนด</li>
+      <li data-lang="en"><strong>Legal Compliance:</strong> If required by law, a court order, or governmental request (e.g., to comply with the PDPA or other relevant regulations)</li>
+    </ul>
+
+    <!-- 4 -->
+    <h2>
+      <span data-lang="th">4. การรักษาความปลอดภัยและการเก็บรักษา</span>
+      <span data-lang="en">4. Data Security and Retention</span>
+    </h2>
+    <p data-lang="th">เราใช้มาตรการรักษาความปลอดภัยที่เหมาะสมเพื่อปกป้องข้อมูลของคุณจากความเสียหายหรือการเข้าถึงโดยไม่ได้รับอนุญาต เราจะเก็บรักษาข้อมูลไว้ตราบเท่าที่จำเป็นต่อการให้บริการ หรือตามที่กฎหมายกำหนด</p>
+    <p data-lang="en">We implement appropriate technical and organizational measures to protect your data. We retain your information only for as long as necessary to provide the service or as required by law.</p>
+
+    <!-- 5 -->
+    <h2>
+      <span data-lang="th">5. สิทธิของคุณ</span>
+      <span data-lang="en">5. Your Rights</span>
+    </h2>
+    <p data-lang="th">คุณมีสิทธิในการเข้าถึง แก้ไข หรือร้องขอให้ลบข้อมูลส่วนบุคคลของคุณตามที่กฎหมายว่าด้วยการคุ้มครองข้อมูลส่วนบุคคล (PDPA) กำหนด หากต้องการใช้สิทธิเหล่านี้ โปรดติดต่อเราตามช่องทางด้านล่าง</p>
+    <p data-lang="en">Subject to applicable laws (such as the PDPA), you have the right to access, correct, or request the deletion of your personal data. To exercise these rights, please contact us using the details below.</p>
+
+    <!-- 6 -->
+    <h2>
+      <span data-lang="th">6. การติดต่อเรา</span>
+      <span data-lang="en">6. Contact Us</span>
+    </h2>
+    <p data-lang="th">หากมีคำถามเกี่ยวกับนโยบายความเป็นส่วนตัวนี้ โปรดติดต่อเรา:</p>
+    <p data-lang="en">If you have any questions or concerns regarding this Privacy Policy or wish to exercise your data rights, please contact us:</p>
+    <div class="contact-box">
+      <p>
+        <span data-lang="th"><strong>บริษัท:</strong> บริษัท สวิซพลัส จำกัด (SWIS Plus CO., LTD.)</span>
+        <span data-lang="en"><strong>Company:</strong> SWIS Plus CO., LTD.</span>
+      </p>
+      <p>
+        <span data-lang="th"><strong>อีเมล:</strong> <a href="mailto:swiscenter@gmail.com">swiscenter@gmail.com</a></span>
+        <span data-lang="en"><strong>Email:</strong> <a href="mailto:swiscenter@gmail.com">swiscenter@gmail.com</a></span>
+      </p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2026 SWIS Plus CO., LTD. — SWIS Parent
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.setAttribute('data-active', lang);
+    document.documentElement.setAttribute('lang', lang);
+    document.getElementById('btn-th').classList.toggle('active', lang === 'th');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    try { localStorage.setItem('privacy_lang', lang); } catch (e) {}
+  }
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('privacy_lang'); } catch (e) {}
+    var browserEn = (navigator.language || '').toLowerCase().indexOf('th') !== 0;
+    setLang(saved || (browserEn ? 'en' : 'th'));
+  })();
+</script>
+
+</body>
+</html>
